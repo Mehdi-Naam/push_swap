@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:35:46 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/03 18:37:08 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/06 14:59:06 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,7 @@ static char	*ft_word(char *s, char c, int *idx)
 	len = i;
 	while (s[i] != c && s[i])
 		i++;
-	str = malloc((i - len + 1) * sizeof(char));
-	if (!str)
-		return (NULL);
+	str = ft_malloc((i - len + 1) * sizeof(char));
 	w = 0;
 	while (w < (i - len))
 	{
@@ -82,9 +80,7 @@ char	**ft_split(char *s, char c)
 	i = 0;
 	w = 0;
 	len = cun_word(s, c);
-	sp = malloc((len + 1) * sizeof(char *));
-	if (!sp)
-		return (NULL);
+	sp = ft_malloc((len + 1) * sizeof(char *));
 	while (w < len)
 	{
 		word = ft_word(s, c, &i);

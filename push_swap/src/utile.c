@@ -6,13 +6,13 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:19:55 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/03 20:56:58 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/06 15:07:32 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_malloc(int size)
+void	*ft_malloc(int size)
 {
 	char	*ptr;
 	int		i;
@@ -20,7 +20,7 @@ void	ft_malloc(int size)
 	i = 0;
 	ptr = malloc(size);
 	if (!ptr)
-		return ;
+		exit(EXIT_FAILURE);
 	while (i < size)
 	{
 		ptr[i] = 0;
@@ -29,24 +29,46 @@ void	ft_malloc(int size)
 	return ((void *)ptr);
 }
 
-int	ft_atoi(char *str)
+void	ft_putstr(char *s, char *color, int fd)
 {
 	int	i;
-4	int	res;
-	int	sig;
 
 	i = 0;
-	res = 0;
-	sig = 1;
-	while (str[i] <= 32)
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	if (!color)
 	{
-		if (str[i] == '-')
-			sig = -1;
-		i++;
+		while (s && s[i])
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-		res = res * 10 + (str[i++] - '0');
-	return (res * sig);
+	else
+	{
+		ft_putstr(color, NULL, fd);
+		ft_putstr(s, NULL, fd);
+		ft_putstr(WHITE, NULL, fd);
+	}
+}
+
+void	is_duplecite(t_push_swap *stack_a)
+{
+	t_push_swap	*tmp;
+
+	while (stack_a)
+	{
+		if (!stack_a->next)
+			break ;
+		tmp = stack_a->next;
+		while (tmp)
+		{
+			if (stack_a->data == tmp->data)
+			{
+				ft_putstr("is_dup number!", RED, 2);
+				exit(EXIT_FAILURE);
+			}
+			tmp = tmp->next;
+		}
+		stack_a = stack_a->next;
+	}
+	return ;
 }
