@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:32:43 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/09 14:58:51 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/09 17:58:56 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 
 typedef struct s_push_swap
 {
-	long long			flg;
 	int					data;
 	struct s_push_swap	*next;
 }						t_push_swap;
@@ -39,5 +38,7 @@ void					ft_putstr(char *s, char *color, int fd);
 void					ft_lstclear(t_push_swap **lst);
 int						is_sorted(t_push_swap *stack_a);
 int						cun_word(char *s, char c);
+void					ft_rotate_b(t_push_swap **stack_b);
+void					ft_reverse_a(t_push_swap **stack_a);
 
 #endif

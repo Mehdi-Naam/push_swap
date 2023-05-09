@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 20:40:03 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/08 20:54:00 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/09 15:21:07 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ t_push_swap	*ft_lstlast(t_push_swap *lst)
 	t_push_swap *last;
 
 	last = lst;
-
 	while (last)
 	{
 		if (last->next == NULL)
