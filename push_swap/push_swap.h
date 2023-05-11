@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:32:43 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/09 17:58:56 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/11 17:55:10 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,14 @@ int						is_sorted(t_push_swap *stack_a);
 int						cun_word(char *s, char c);
 void					ft_rotate_b(t_push_swap **stack_b);
 void					ft_reverse_a(t_push_swap **stack_a);
+void					ft_rr(t_push_swap **stack_a, t_push_swap **stack_b);
+void					ft_rrr(t_push_swap **stack_a, t_push_swap **stack_b);
+void					ft_ss(t_push_swap **stack_a, t_push_swap **stack_b);
+void					ft_reverse_b(t_push_swap **stack_b);
+void					push_a(t_push_swap **stack_a, t_push_swap **stack_b);
+void					push_b(t_push_swap **stack_a, t_push_swap **stack_b);
+void					ft_swap_b(t_push_swap **stack_b);
+void					ft_swap_a(t_push_swap **stack_a);
+void					ft_rotate_a(t_push_swap **stack_a);
 
 #endif
