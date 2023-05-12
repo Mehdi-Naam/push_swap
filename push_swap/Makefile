@@ -4,7 +4,7 @@ CC = cc
 RM = @rm -rf
 FLAGS = -Wall -Wextra -Werror
 
-FILE_MN = ft_all_lst.c ft_split.c push_swap.c utile.c parsing.c
+FILE_MN = ft_all_lst.c ft_split.c push_swap.c utile.c parsing.c ft_instraction_a.c ft_instraction_b.c ft_instraction.c ft_sorting.c
 
 PATH_SRC = ./src/
 PATH_MAN = $(PATH_OBJ_MND)
