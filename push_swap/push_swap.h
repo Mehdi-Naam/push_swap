@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:32:43 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/12 20:59:50 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/15 12:29:36 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # define GREEN "\033[0;32m"
 # define WHITE "\033[0;37m"
 
+# include <limits.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -24,6 +25,7 @@
 typedef struct s_push_swap
 {
 	int					data;
+	int					idx;
 	struct s_push_swap	*next;
 }						t_push_swap;
 
@@ -52,9 +54,12 @@ void					sort_three(t_push_swap **stack_a);
 void					sort_for(t_push_swap **stack_a, t_push_swap **stack_b);
 void					sort_five(t_push_swap **stack_a, t_push_swap **stack_b);
 void					simpl_sort(t_push_swap *stack_a, t_push_swap *stack_b);
+void					ft_indix(t_push_swap **stack_a);
+void					ft_push_to_b(t_push_swap **stack_a, t_push_swap **stack_b);
 int						ft_lstsize(t_push_swap *lst);
 int						is_sorted(t_push_swap *stack_a);
 int						cun_word(char *s, char c);
-int						ft_min(t_push_swap *stack_a);
+int						ft_min_idx(t_push_swap *stack_a);
+int						ft_min_sort(t_push_swap *stack_a);
 
 #endif

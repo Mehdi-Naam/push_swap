@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:32:37 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/12 21:03:19 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/15 14:41:40 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,17 @@ int	main(int ac, char **av)
 	is_duplecite(stack_a);
 	if (is_sorted(stack_a))
 		exit (0);
-	simpl_sort(stack_a, stack_b);
+	simpl_sort(stack_a, stack_a);
+	ft_push_to_b(&stack_a, &stack_b);
+	t_push_swap *tmp = stack_b;
+	if (tmp)
+{		while (tmp)
+		{
+			printf("%d\n", tmp->data);
+			tmp = tmp->next;
+		}
+	}
+	else
+		printf("mok");  
+	
 }

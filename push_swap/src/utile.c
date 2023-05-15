@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:19:55 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/12 19:02:18 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/15 09:36:06 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,26 +76,10 @@ void	is_duplecite(t_push_swap *stack_a)
 int	is_sorted(t_push_swap *stack_a)
 {
 	while (stack_a->next)
-	{		
+	{
 		if (stack_a->data > stack_a->next->data)
 			return (0);
-		stack_a = stack_a->next;	
+		stack_a = stack_a->next;
 	}
 	return (1);
-}
-
-int	ft_min(t_push_swap *stack_a)
-{
-	int	min;
-	t_push_swap	*tmp;
-
-	tmp = stack_a;
-	min = tmp->data;
-	while (tmp)
-	{
-		if (min > tmp->data)
-			min = tmp->data;
-		tmp = tmp->next;
-	}
-	return (min);
 }

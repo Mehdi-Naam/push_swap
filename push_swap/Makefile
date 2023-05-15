@@ -2,9 +2,10 @@ NAME = push_swap
 
 CC = cc
 RM = @rm -rf
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 
-FILE_MN = ft_all_lst.c ft_split.c push_swap.c utile.c parsing.c ft_instraction_a.c ft_instraction_b.c ft_instraction.c ft_sorting.c
+FILE_MN = ft_all_lst.c ft_split.c push_swap.c utile.c parsing.c \
+ft_instraction_a.c ft_instraction_b.c ft_instraction.c ft_sorting.c ft_indix.c ft_push_to_b.c
 
 PATH_SRC = ./src/
 PATH_MAN = $(PATH_OBJ_MND)
