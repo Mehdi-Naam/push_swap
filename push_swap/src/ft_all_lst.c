@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 20:40:03 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/09 15:21:07 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/15 18:07:53 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstadd_back(t_push_swap **lst, t_push_swap *new)
 {
-	t_push_swap *last;
+	t_push_swap	*last;
 
 	if (!(*lst))
 		(*lst) = new;
@@ -25,13 +25,12 @@ void	ft_lstadd_back(t_push_swap **lst, t_push_swap *new)
 	}
 }
 
-void ft_lstclear(t_push_swap **lst)
+void	ft_lstclear(t_push_swap **lst)
 {
 	t_push_swap	*tmp;
 	t_push_swap	*tmp2;
 
 	tmp = *lst;
-
 	while (tmp)
 	{
 		tmp2 = tmp->next;
@@ -42,7 +41,7 @@ void ft_lstclear(t_push_swap **lst)
 
 t_push_swap	*ft_lstlast(t_push_swap *lst)
 {
-	t_push_swap *last;
+	t_push_swap	*last;
 
 	last = lst;
 	while (last)
@@ -56,7 +55,7 @@ t_push_swap	*ft_lstlast(t_push_swap *lst)
 
 t_push_swap	*ft_lstnew(int data)
 {
-	t_push_swap *new;
+	t_push_swap	*new;
 
 	new = (t_push_swap *)ft_malloc(sizeof(t_push_swap));
 	new->data = data;
@@ -67,7 +66,7 @@ t_push_swap	*ft_lstnew(int data)
 int	ft_lstsize(t_push_swap *lst)
 {
 	t_push_swap	*tmp;
-	int size;
+	int			size;
 
 	tmp = lst;
 	size = 0;

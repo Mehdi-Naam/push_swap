@@ -6,15 +6,41 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:32:37 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/15 14:41:40 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/15 18:22:08 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+void	display(t_push_swap *stack_a, char c)
+{
+	t_push_swap	*tmp;
+
+	printf("%s", GREEN);
+	printf("\t\tstack %c\t\t\n", c);
+	printf("|_______________________________|\n");
+	printf("|\tdata\t|\tindex\t|\n");
+	printf("|_______________|_______________|\n");
+	tmp = stack_a;
+	if (tmp)
+	{
+		while (tmp)
+		{
+			printf("|\t%d\t|\t%d\t|\n", tmp->data, tmp->idx);
+			tmp = tmp->next;
+		}
+	}
+	else
+		printf("mok");
+	printf("|_______________|_______________|\n");
+	printf("%s", WHITE);
+}
+
 void	simpl_sort(t_push_swap *stack_a, t_push_swap *stack_b)
 {
-	int	size = ft_lstsize(stack_a);
+	int	size;
+
+	size = ft_lstsize(stack_a);
 	if (size == 2)
 		sort_two(&stack_a);
 	else if (size == 3)
@@ -28,26 +54,16 @@ void	simpl_sort(t_push_swap *stack_a, t_push_swap *stack_b)
 int	main(int ac, char **av)
 {
 	(void)ac;
-	t_push_swap	*stack_a;
-	t_push_swap	*stack_b;
+	t_push_swap *stack_a;
+	t_push_swap *stack_b;
 
 	stack_a = NULL;
 	stack_b = NULL;
 	parsing(&stack_a, av);
 	is_duplecite(stack_a);
 	if (is_sorted(stack_a))
-		exit (0);
-	simpl_sort(stack_a, stack_a);
+		exit(0);
+	simpl_sort(stack_a, stack_b);
 	ft_push_to_b(&stack_a, &stack_b);
-	t_push_swap *tmp = stack_b;
-	if (tmp)
-{		while (tmp)
-		{
-			printf("%d\n", tmp->data);
-			tmp = tmp->next;
-		}
-	}
-	else
-		printf("mok");  
-	
+	display(stack_b, 'B');
 }
