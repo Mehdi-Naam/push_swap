@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:19:45 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/09 15:00:46 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/16 11:34:29 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,10 @@ int	ft_atoi(char *str)
 		res = res * 10 + (str[i++] - '0');
 	f_res = res * sig;
 	if (f_res < -2147483648 || f_res > 2147483647)
+	{
+		ft_putstr("Error : you are over away of 'MAXINT' or 'MININT'!\n", RED, 2);
 		exit(EXIT_FAILURE);
+	}
 	return (f_res);
 }
 
@@ -78,7 +81,7 @@ void	parsing(t_push_swap **stack_a, char **av)
 			else
 			{
 				ft_lstclear(stack_a);
-				ft_putstr("this project does not accept characters!\n", RED, 2);
+				ft_putstr("Error : this project does not accept characters!\n", RED, 2);
 				exit(EXIT_FAILURE);
 			}
 			i++;

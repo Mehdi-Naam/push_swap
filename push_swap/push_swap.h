@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:32:43 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/15 12:29:36 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/17 16:15:51 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,10 @@ void					sort_for(t_push_swap **stack_a, t_push_swap **stack_b);
 void					sort_five(t_push_swap **stack_a, t_push_swap **stack_b);
 void					simpl_sort(t_push_swap *stack_a, t_push_swap *stack_b);
 void					ft_indix(t_push_swap **stack_a);
-void					ft_push_to_b(t_push_swap **stack_a, t_push_swap **stack_b);
+void					ft_push_to_b(t_push_swap **stack_a,
+							t_push_swap **stack_b);
+void					ft_major_comajor(t_push_swap **stack_a,
+							t_push_swap **stack_b);
 int						ft_lstsize(t_push_swap *lst);
 int						is_sorted(t_push_swap *stack_a);
 int						cun_word(char *s, char c);

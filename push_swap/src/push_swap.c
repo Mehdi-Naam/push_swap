@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:32:37 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/15 18:22:08 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/17 22:24:58 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,10 @@ int	main(int ac, char **av)
 	if (is_sorted(stack_a))
 		exit(0);
 	simpl_sort(stack_a, stack_b);
+	ft_indix(&stack_a);
+	display(stack_a, 'A');
 	ft_push_to_b(&stack_a, &stack_b);
 	display(stack_b, 'B');
+	printf("\n**********************************\n");
+	ft_major_comajor(&stack_a, &stack_b);
 }

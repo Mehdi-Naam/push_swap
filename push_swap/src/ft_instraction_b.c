@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 17:01:01 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/15 12:46:08 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/17 18:48:19 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_rotate_b(t_push_swap **stack_b, int flg)
 	t_push_swap	*tmp_s;
 
 	tmp_s = *stack_b;
+	if (tmp_s->next == NULL)
+		return ;
 	tmp = ft_lstlast(*stack_b);
 	*stack_b = (*stack_b)->next;
 	tmp->next = tmp_s;
