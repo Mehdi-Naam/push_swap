@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/09 17:01:01 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/17 18:48:19 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/20 17:29:01 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	ft_rotate_b(t_push_swap **stack_b, int flg)
 	tmp->next = tmp_s;
 	tmp_s->next = NULL;
 	if (flg == 0)
-		ft_putstr("rb\n", WHITE, 1);
+		write(1, "rb\n", 3);
 }
 
 void	ft_swap_b(t_push_swap **stack_b, int flg)
@@ -38,8 +38,11 @@ void	ft_swap_b(t_push_swap **stack_b, int flg)
 	tmp_h->data = tmp_s->data + tmp_h->data;
 	tmp_s->data = tmp_h->data - tmp_s->data;
 	tmp_h->data = tmp_h->data - tmp_s->data;
+	tmp_h->idx = tmp_s->idx + tmp_h->idx;
+	tmp_s->idx = tmp_h->idx - tmp_s->idx;
+	tmp_h->idx = tmp_h->idx - tmp_s->idx;
 	if (flg == 0)
-		ft_putstr("sb\n", WHITE, 1);
+		write(1, "sb\n", 3);
 }
 
 void	push_b(t_push_swap **stack_a, t_push_swap **stack_b)
@@ -52,7 +55,7 @@ void	push_b(t_push_swap **stack_a, t_push_swap **stack_b)
 	*stack_a = (*stack_a)->next;
 	tmp_a->next = tmp_b;
 	*stack_b = tmp_a;
-	ft_putstr("pb\n", WHITE, 1);
+	write(1, "pb\n", 3);
 }
 
 void	ft_reverse_b(t_push_swap **stack_b, int flg)
@@ -70,5 +73,5 @@ void	ft_reverse_b(t_push_swap **stack_b, int flg)
 	tmp->next = tmp_h;
 	*stack_b = tmp;
 	if (flg == 0)
-		ft_putstr("rrb\n", WHITE, 1);
+		write(1, "rrb\n", 4);
 }

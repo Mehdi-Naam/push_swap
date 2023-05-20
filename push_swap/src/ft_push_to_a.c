@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:18:14 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/18 22:39:12 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/20 17:35:56 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,30 +29,42 @@ int	ft_find(t_push_swap **stack_b, int serch)
 	return (i);
 }
 
-void	find_target(t_push_swap **stack_b, int find)
+void	find_target(t_push_swap **stack_b, int cible, int find)
 {
 	int	size;
 	int	mid;
 
 	size = ft_lstsize(*stack_b);
 	mid = size / 2;
-	while (*stack_b && (*stack_b)->idx != find)
+	while ((*stack_b) && (*stack_b)->idx != cible)
 	{
 		if (find <= mid)
 			ft_rotate_b(stack_b, 0);
 		else if (find > mid)
-			ft_reverse_b(stack_b, 0);  
+			ft_reverse_b(stack_b, 0);
 	}
 }
 
-void	push_to_a_swap(t_push_swap **stack_a, t_push_swap **stack_b, int i, int j, int *size)
+void	push_to_a_swap(t_push_swap **stack_a, t_push_swap **stack_b, int cm, int *size)
 {
-	find_target(stack_b, j);
+	find_target(stack_b, cm, ft_find(stack_b, cm));
 	push_a(stack_a, stack_b);
+	find_target(stack_b, *size, ft_find(stack_b, *size));
 	(*size)--;
-	find_target(stack_b, i);
 	push_a(stack_a, stack_b);
 	ft_swap_a(stack_a, 0);
+}
+
+int	ft_instrac(int find, int size)
+{
+	int	ins;
+
+	ins = 0;
+	if (find <= size / 2)
+		ins = find;
+	else
+		ins = size - find;
+	return (ins);
 }
 
 void	ft_major_comajor(t_push_swap **stack_a, t_push_swap **stack_b)
@@ -68,15 +80,16 @@ void	ft_major_comajor(t_push_swap **stack_a, t_push_swap **stack_b)
 	{
 		major = size;
 		comajor = size - 1;
-		major_i = ft_find(stack_b, major);
-		comajor_i = ft_find(stack_b, comajor);
-		if (major_i < comajor_i)/**/
+		major_i = ft_instrac(ft_find(stack_b, major), size);
+		comajor_i = ft_instrac(ft_find(stack_b, comajor), size);
+		if (major_i <= comajor_i)
 		{
-			find_target(stack_b, major_i);
+			find_target(stack_b, major, ft_find(stack_b, major));
 			push_a(stack_a, stack_b);
 		}
 		else
-			push_to_a_swap(stack_a, stack_b, major_i, comajor_i, &size);
+			push_to_a_swap(stack_a, stack_b, comajor, &size);
 		size--;
 	}
+	push_a(stack_a, stack_b);
 }

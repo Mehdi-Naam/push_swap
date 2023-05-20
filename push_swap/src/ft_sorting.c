@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:50:17 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/13 18:52:51 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/20 17:50:13 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_min_sort(t_push_swap *stack_a)
 	int			min;
 
 	tmp = stack_a;
-	min = tmp->data;
+	min = INT_MAX;
 	while (tmp)
 	{
 		if (min > tmp->data)

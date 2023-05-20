@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 11:19:44 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/18 21:52:50 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/20 17:18:58 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	simpliest(t_push_swap **stack_a, t_push_swap **stack_b, int len, int s)
 	}
 }
 
-void	ft_push_to_b(t_push_swap **stack_a, t_push_swap **stack_b)
+void	ft_push_to_b(t_push_swap **stack_a, t_push_swap **stack_b, int chanks)
 {
 	int	size;
 	int	len;
@@ -45,7 +45,7 @@ void	ft_push_to_b(t_push_swap **stack_a, t_push_swap **stack_b)
 
 	ft_indix(stack_a);
 	size = ft_lstsize(*stack_a);
-	len = size / 5;
+	len = size / chanks;
 	s = len;
 	while (1)
 	{
