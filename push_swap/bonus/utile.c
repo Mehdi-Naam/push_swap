@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:19:55 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/20 22:37:08 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/20 15:18:38 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ void	*ft_malloc(int size)
 	i = 0;
 	ptr = malloc(size);
 	if (!ptr)
-	{
-		free(ptr);
 		exit(EXIT_FAILURE);
-	}
 	while (i < size)
 	{
 		ptr[i] = 0;
