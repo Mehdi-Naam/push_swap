@@ -6,35 +6,11 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/02 16:32:37 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/20 23:21:00 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/21 16:20:12 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
-
-// void	display(t_push_swap *stack_a, char c)
-// {
-// 	t_push_swap	*tmp;
-
-// 	printf("%s", GREEN);
-// 	printf("\t\tstack %c\t\t\n", c);
-// 	printf("|_______________________________|\n");
-// 	printf("|\tdata\t|\tindex\t|\n");
-// 	printf("|_______________|_______________|\n");
-// 	tmp = stack_a;
-// 	if (tmp)
-// 	{
-// 		while (tmp)
-// 		{
-// 			printf("|\t%d\t|\t%d\t|\n", tmp->data, tmp->idx);
-// 			tmp = tmp->next;
-// 		}
-// 	}
-// 	else
-// 		printf("mok");
-// 	printf("|_______________|_______________|\n");
-// 	printf("%s", WHITE);
-// }
+#include "push_swap.h"
 
 void	long_sort(t_push_swap **stack_a, t_push_swap **stack_b, int size)
 {
@@ -70,17 +46,11 @@ void	simpl_sort(t_push_swap **stack_a, t_push_swap **stack_b)
 	}
 }
 
-void	fun(void)
-{
-	system("leaks push_swap");
-}
-
 int	main(int ac, char **av)
 {
 	t_push_swap *stack_a;
 	t_push_swap *stack_b;
 
-	// atexit(fun);
 	if (ac < 2)
 		return (-1);
 	stack_a = NULL;

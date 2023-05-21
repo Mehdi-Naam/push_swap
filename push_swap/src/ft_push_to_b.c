@@ -6,11 +6,11 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/15 11:19:44 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/20 22:59:54 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/21 22:48:55 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	simpliest(t_push_swap **stack_a, t_push_swap **stack_b, int len, int s)
 {
@@ -43,7 +43,7 @@ void	ft_push_to_b(t_push_swap **stack_a, t_push_swap **stack_b, int chanks)
 	int	len;
 	int	s;
 
-	ft_indix(stack_a);
+	ft_indix(stack_a); 
 	size = ft_lstsize(*stack_a);
 	len = size / chanks;
 	s = len;

@@ -6,11 +6,11 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:19:45 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/20 18:08:59 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/21 21:44:13 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "checker_bonus.h"
 
 int	ft_atoi(char *str)
 {
@@ -32,7 +32,6 @@ int	ft_atoi(char *str)
 	}
 	while (str[i] >= '0' && str[i] <= '9')
 		res = res * 10 + (str[i++] - '0');
-
 	f_res = res * sig;
 	if (f_res < -2147483648 || f_res > 2147483647)
 	{
@@ -47,8 +46,8 @@ int	is_degit(char *s)
 	int	i;
 
 	i = 0;
-	if (s[0] == '-' || s[0] == '+')
-		exit(-1);
+	if ((s[0] == '-' || s[0] == '+') && s[1] != '\0')
+		i++;
 	while (s[i])
 	{
 		if (s[i] < '0' || s[i] > '9')
@@ -64,6 +63,7 @@ void	parsing(t_push_swap **stack_a, char **av)
 	int			j;
 	char		**sp;
 	t_push_swap	*new;
+
 
 	j = 0;
 	while (av[++j])
@@ -82,10 +82,12 @@ void	parsing(t_push_swap **stack_a, char **av)
 			else
 			{
 				ft_lstclear(stack_a);
+				ft_free(sp);
 				ft_putstr("Error : this project does not accept characters!\n", RED, 2);
 				exit(EXIT_FAILURE);
 			}
 			i++;
 		}
+		ft_free(sp);
 	}
 }

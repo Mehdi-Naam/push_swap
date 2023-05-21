@@ -6,11 +6,11 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:18:14 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/20 17:35:56 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/21 16:20:58 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int	ft_find(t_push_swap **stack_b, int serch)
 {

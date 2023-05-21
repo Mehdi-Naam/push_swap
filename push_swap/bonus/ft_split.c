@@ -6,11 +6,11 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:35:46 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/09 14:58:31 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/21 21:44:07 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "checker_bonus.h"
 
 int	cun_word(char *s, char c)
 {

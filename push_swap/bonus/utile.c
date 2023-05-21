@@ -6,11 +6,11 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:19:55 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/20 15:18:38 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/21 21:44:22 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "checker_bonus.h"
 
 void	*ft_malloc(int size)
 {

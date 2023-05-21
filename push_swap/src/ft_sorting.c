@@ -6,11 +6,11 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/12 15:50:17 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/20 17:50:13 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/21 16:20:36 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int	ft_min_sort(t_push_swap *stack_a)
 {

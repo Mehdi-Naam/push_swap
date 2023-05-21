@@ -6,11 +6,11 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:19:45 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/20 23:00:41 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/21 22:03:29 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 int	ft_atoi(char *str)
 {
@@ -47,7 +47,7 @@ int	is_degit(char *s)
 	int	i;
 
 	i = 0;
-	if (s[0] == '-' || s[0] == '+')
+	if ((s[0] == '-' || s[0] == '+') && s[1] != '\0')
 		i++;
 	while (s[i])
 	{
@@ -69,7 +69,10 @@ void	parsing(t_push_swap **stack_a, char **av)
 	while (av[++j])
 	{
 		if (cun_word(av[j], ' ') == 0)
+		{
+			ft_putstr("ERROR\n", RED, 2);
 			exit (EXIT_FAILURE);
+		}
 		sp = ft_split(av[j], ' ');
 		i = 0;
 		while (sp[i])

@@ -6,11 +6,11 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/08 20:40:03 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/15 18:07:53 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/21 21:43:49 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "checker_bonus.h"
 
 void	ft_lstadd_back(t_push_swap **lst, t_push_swap *new)
 {

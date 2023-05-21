@@ -6,11 +6,11 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/13 17:28:49 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/15 10:30:31 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/21 16:21:34 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	set(t_push_swap *stack_a)
 {

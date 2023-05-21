@@ -6,11 +6,11 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:19:55 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/20 22:37:08 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/21 16:59:41 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "push_swap.h"
 
 void	*ft_malloc(int size)
 {
