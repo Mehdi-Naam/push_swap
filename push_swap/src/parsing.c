@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:19:45 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/21 22:03:29 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/22 12:41:15 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_atoi(char *str)
 	int			i;
 	int			sig;
 	long int	res;
-	long int	f_res;
 
 	i = 0;
 	res = 0;
@@ -31,15 +30,15 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	while (str[i] >= '0' && str[i] <= '9')
-		res = res * 10 + (str[i++] - '0');
-
-	f_res = res * sig;
-	if (f_res < -2147483648 || f_res > 2147483647)
 	{
-		ft_putstr("Error : you are over away of 'MAXINT' or 'MININT'!\n", RED, 2);
-		exit(EXIT_FAILURE);
+		res = res * 10 + (str[i++] - '0');
+		if ((res > 2147483648 && sig == -1) || (res > 2147483647 && sig == 1))
+		{
+			ft_putstr("Error : 'MAXINT' or 'MININT'!\n", RED, 2);
+			exit(EXIT_FAILURE);
+		}
 	}
-	return (f_res);
+	return (res * sig);
 }
 
 int	is_degit(char *s)
@@ -58,6 +57,23 @@ int	is_degit(char *s)
 	return (1);
 }
 
+void	non_diegit(t_push_swap **stack_a, char **sp)
+{
+	ft_lstclear(stack_a);
+	ft_free(sp);
+	ft_putstr("Error : this project does not accept characters!\n", RED, 2);
+	exit(EXIT_FAILURE);
+}
+
+void	empty_str(char **av, int j)
+{
+	if (cun_word(av[j], ' ') == 0)
+	{
+		ft_putstr("Error : empty_str\n", RED, 2);
+		exit(EXIT_FAILURE);
+	}
+}
+
 void	parsing(t_push_swap **stack_a, char **av)
 {
 	int			i;
@@ -68,11 +84,7 @@ void	parsing(t_push_swap **stack_a, char **av)
 	j = 0;
 	while (av[++j])
 	{
-		if (cun_word(av[j], ' ') == 0)
-		{
-			ft_putstr("ERROR\n", RED, 2);
-			exit (EXIT_FAILURE);
-		}
+		empty_str(av, j);
 		sp = ft_split(av[j], ' ');
 		i = 0;
 		while (sp[i])
@@ -83,12 +95,7 @@ void	parsing(t_push_swap **stack_a, char **av)
 				ft_lstadd_back(stack_a, new);
 			}
 			else
-			{
-				ft_lstclear(stack_a);
-				ft_free(sp);
-				ft_putstr("Error : this project does not accept characters!\n", RED, 2);
-				exit(EXIT_FAILURE);
-			}
+				non_diegit(stack_a, sp);
 			i++;
 		}
 		ft_free(sp);

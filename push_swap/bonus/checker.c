@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/21 17:11:11 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/21 21:47:43 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/22 12:37:59 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	ft_insc(t_push_swap **stack_a, t_push_swap **stack_b, char *s)
 	else if (ft_str("ss\n", s))
 		ft_ss(stack_a, stack_b);
 	else
-		exit (1);
+		exit(1);
 }
 
 void	ft_checker(t_push_swap **stack_a, t_push_swap **stack_b)
@@ -74,17 +74,19 @@ void	ft_checker(t_push_swap **stack_a, t_push_swap **stack_b)
 
 int	main(int ac, char **av)
 {
-	(void)ac;
-	t_push_swap *stack_a;
-	t_push_swap *stack_b;
+	t_push_swap	*stack_a;
+	t_push_swap	*stack_b;
 
+	if (ac < 2)
+		return (0);
 	stack_a = NULL;
 	stack_b = NULL;
 	parsing(&stack_a, av);
 	is_duplecite(stack_a);
 	ft_checker(&stack_a, &stack_b);
-	if (is_sorted(stack_a))
+	if (is_sorted(stack_a) && !stack_b)
 		ft_putstr("OK\n", GREEN, 1);
 	else
 		ft_putstr("KO\n", RED, 1);
+	ft_lstclear(&stack_a);
 }

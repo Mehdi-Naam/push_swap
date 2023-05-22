@@ -48,10 +48,10 @@ FILE_OBJ_BUS = $(addprefix $(PATH_OBJ_BUS), $(OBJCT_FIL_BUS))
 
 bonus : $(NAME_BUS)
 
-$(NAME_BUS) : $(FILE_OBJ_BUS) bonus/checker_bonus.h
+$(NAME_BUS) : $(FILE_OBJ_BUS) bonus/checker_bonus.h bonus/gnl/get_next_line.h
 		$(CC) $(FLAGS) $(FILE_OBJ_BUS) -o $(NAME_BUS)
 
-$(PATH_OBJ_BUS)%.o : $(PATH_BUS)%.c bonus/checker_bonus.h
+$(PATH_OBJ_BUS)%.o : $(PATH_BUS)%.c bonus/checker_bonus.h bonus/gnl/get_next_line.h
 		@mkdir -p $(PATH_OBJ_BUS)
 		@mkdir -p $(PATH_BS)
 		@mkdir -p $(PATH_GNL)

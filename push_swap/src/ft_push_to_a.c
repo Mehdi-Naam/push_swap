@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/18 18:18:14 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/21 16:20:58 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/22 11:05:45 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void	find_target(t_push_swap **stack_b, int cible, int find)
 	}
 }
 
-void	push_to_a_swap(t_push_swap **stack_a, t_push_swap **stack_b, int cm, int *size)
+void	push_to_a_swap(t_push_swap **stack_a, t_push_swap **stack_b, int cm,
+		int *size)
 {
 	find_target(stack_b, cm, ft_find(stack_b, cm));
 	push_a(stack_a, stack_b);

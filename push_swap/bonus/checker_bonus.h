@@ -5,13 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/21 16:22:19 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/21 21:46:26 by enaam            ###   ########.fr       */
+/*   Created: 2023/05/22 11:02:01 by enaam             #+#    #+#             */
+/*   Updated: 2023/05/22 12:03:33 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHRCKER_BONUS_H
-# define CHRCKER_BONUS_H
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
 # define RED "\033[1;31m"
 # define GREEN "\033[0;32m"
@@ -49,8 +49,10 @@ void		ft_swap_b(t_push_swap **stack_b);
 void		ft_swap_a(t_push_swap **stack_a);
 void		ft_rotate_a(t_push_swap **stack_a);
 void		ft_free(char **s);
-void		ft_insc(t_push_swap **stack_a, t_push_swap **stack_b, char *s);
-void		ft_checker(t_push_swap **stack_a, t_push_swap **stack_b);
+void		ft_insc(t_push_swap **stack_a, t_push_swap **stack_b,
+				char *s);
+void		ft_checker(t_push_swap **stack_a,
+				t_push_swap **stack_b);
 int			ft_lstsize(t_push_swap *lst);
 int			is_sorted(t_push_swap *stack_a);
 int			cun_word(char *s, char c);

@@ -6,7 +6,7 @@
 /*   By: enaam <enaam@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 18:19:55 by enaam             #+#    #+#             */
-/*   Updated: 2023/05/21 16:59:41 by enaam            ###   ########.fr       */
+/*   Updated: 2023/05/22 12:41:43 by enaam            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	is_duplecite(t_push_swap *stack_a)
 		{
 			if (stack_a->data == tmp->data)
 			{
-				ft_putstr("is_dup number!", RED, 2);
+				ft_putstr("Error : is_dup number!\n", RED, 2);
 				exit(EXIT_FAILURE);
 			}
 			tmp = tmp->next;
